@@ -1,0 +1,135 @@
+@use '../mixins/hover.scss' as *;
+@use '../mixins/responsive.scss' as *;
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 375px;
+  background-color: #24053e;
+  border-bottom-right-radius: 300px 50px;
+  border-bottom-left-radius: 300px 50px;
+  padding-top: 32px;
+  padding-inline: 16px;
+  margin: auto;
+
+  @include responsive(tablet) {
+    width: 768px;
+    margin: auto;
+  }
+
+  @include responsive(desktop) {
+    width: 1440px;
+    padding-inline: 165px;
+    margin: auto;
+  }
+
+  @include responsive(tablet) {
+    background-image: url(/assets/bg-pattern-1.svg),
+      url(/assets/bg-pattern-2.svg);
+    background-repeat: no-repeat;
+    background-size: 50%, 30%;
+    background-position: center left -250px, bottom 100px right -130px;
+  }
+
+  @include responsive(desktop) {
+    background-image: url(/assets/bg-pattern-1.svg),
+      url(/assets/bg-pattern-2.svg);
+    background-repeat: no-repeat;
+    background-size: 30%, 20%;
+    background-position: bottom 300px left -250px, bottom 190px right -130px;
+  }
+
+  &__access {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__menu {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: -0.16px;
+    border-bottom: 3px solid #44ffa1;
+    color: var(--white);
+
+    @include hover {
+      color: var(--button);
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 50px;
+    color: var(--white);
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    margin: 0;
+    margin-top: 64px;
+
+    @include responsive(tablet) {
+      font-size: 60px;
+      text-align: center;
+      width: 573px;
+      line-height: 80px;
+    }
+
+    @include responsive(desktop) {
+      font-size: 80px;
+    }
+  }
+  &__title--border {
+    border-bottom: 3px solid #44ffa1;
+  }
+
+  &__button {
+    position: relative;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    width: 133px;
+    height: 55px;
+    background-color: #44ffa1;
+    color: #24053e;
+
+    @include hover {
+      background-color: #24053e;
+      color: #44ffa1;
+      border: 1px solid #44ffa1;
+    }
+
+    @include responsive(tablet) {
+      top: 70px;
+    }
+
+    @include responsive(desktop) {
+      top: 120px;
+    }
+  }
+  &__image {
+    width: 320px;
+    height: 184px;
+    position: relative;
+    top: 104px;
+
+    @include responsive(tablet) {
+      width: 514px;
+      height: 296px;
+      top: 150px;
+    }
+
+    @include responsive(desktop) {
+      width: 767px;
+      height: 441px;
+      top: 230px;
+    }
+  }
+}
