@@ -1,0 +1,117 @@
+@use '../mixins/hover.scss' as *;
+@use '../mixins/responsive.scss' as *;
+
+.image__avatar {
+  margin-inline: auto;
+  width: 281px;
+  height: 281px;
+  position: relative;
+  top: 55px;
+  z-index: -1;
+
+  @include responsive(tablet) {
+    position: relative;
+    left: -190px;
+  }
+
+  @include responsive(desktop) {
+    width: 477px;
+    height: 477px;
+    left: -400px;
+  }
+}
+
+.container__avatar {
+  width: 343px;
+  height: 375px;
+  background-color: #24053e;
+  padding: 32px 31px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include responsive(tablet) {
+    width: 514px;
+    height: 375px;
+    align-items: start;
+    position: relative;
+    top: -70px;
+    left: 100px;
+
+    background-image: url(/assets/bg-pattern-3.svg);
+    background-repeat: no-repeat;
+    background-position: bottom -100px right 20px;
+  }
+
+  @include responsive(desktop) {
+    width: 730px;
+    height: 413px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    left: 100px;
+    top: -200px;
+  }
+
+  &--title {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    margin: 0;
+
+    @include responsive(tablet) {
+      font-size: 48px;
+      line-height: 56px;
+      text-align: left;
+    }
+
+    @include responsive(desktop) {
+      font-size: 56px;
+      line-height: 64px;
+      text-align: left;
+    }
+  }
+
+  &--text {
+    color: rgba(255, 255, 255, 0.818);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    margin: 0;
+    margin-top: 16px;
+
+    @include responsive(tablet) {
+      text-align: left;
+    }
+
+    @include responsive(desktop) {
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+
+  &--button {
+    margin-top: 24px;
+    padding: 11px;
+    width: 172px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    color: #24053e;
+    background-color: #44ffa1;
+
+    @include responsive(tablet) {
+    }
+
+    @include hover {
+      color: #44ffa1;
+      border: 1px solid #44ffa1;
+      background-color: #24053e;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@use '../mixins/hover.scss' as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 74px;
+
+  &__logo {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    margin-top: 57px;
+    margin-bottom: 63px;
+  }
+}
+
+.logo {
+  @include hover {
+    filter: invert(0%) sepia(2%) saturate(7%) hue-rotate(350deg) brightness(0%)
+      contrast(200%);
+  }
+}
